@@ -88,7 +88,7 @@ Fine-grained, intermediate evaluation data and statistics can also be found in `
 
 ## Customizing Experiments
 
-To run offline, modify the `.sh` file to run each command with nohup. If you have downloaded checkpoints for an already trained Critic, modify the `.sh` to only run the last line (inference) while passing the path to the Critic into `--dm_path`.
+To run offline, modify the `.sh` file to run each command with nohup. If you have downloaded checkpoints for an already trained Critic, modify the `.sh` to only run the last line (inference) while passing the path to the Critic into `--dm_path`. Make sure the tokenizer is in the same directory.
 
 ## Citation 
 If you plan to use the code, please cite our paper: TBD.
