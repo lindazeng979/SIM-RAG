@@ -1,0 +1,79 @@
+ID,Turn,Reasoner Task Content,Reasoner Answer,Reasoner Rationale,Gold Answer,Gate Verdict
+tc_217,0,"Question: Which volcano in Tanzania is the highest mountain in Africa? 
+",mount kilimanjaro,"Mount Kilimanjaro is a dormant volcano located in Tanzania and is the highest mountain in Africa, with an elevation of 5,895 meters (19,341 ft) above sea level.","['mawensi', 'kilimanjaro', 'mount killimanjaro', 'mount kilimanjaro', 'mount kilamanjaro', 'tussock grassland tanzania', 'mt kilamanjaro', 'mount kilimandjaro', 'kilamanjaro', 'kibo volcano', 'kilimanjaro massif', 'uhuru peak', 'kilimanjaro mountain', 'kaiser wilhelm spitze', 'gilman s point', 'mt kilimanjaro', 'kilima njaro', 'stella point', 'mawenzi', 'mount kiliminjaro', 'kilimandjaro', 'killimanjaro', 'kilimanjiro', 'kilimonjaro', 'highest mountain in africa', 'kiliminjaro']",1
+tc_316,0,"Question: If I Were A Rich Man Was a big hit from which stage show? 
+",fiddler on roof,"""If I Were a Rich Man"" is a famous song from the 1964 Broadway musical Fiddler on the Roof, written by Jerry Bock and Sheldon Harnick, with lyrics by Sheldon Harnick.","['fiddler on roof', 'sprintze', 'anatevka', '2 life', 'fiddler on reoof']",1
+tc_455,0,"Question: What Michelle Pfeiffer movie got a boost from the Coolio song Gangsta's Paradise? 
+",dangerous minds,"The 1995 film ""Dangerous Minds"" starring Michelle Pfeiffer features the song ""Gangsta's Paradise"" by Coolio featuring L.V. as part of its soundtrack, which contributed to the movie's popularity and success.","['my posse don t do homework', 'dangerous minds', 'dangerous minds film']",1
+tc_49,0,"Question: Who had a 70s No 1 hit with Kiss You All Over? 
+",exile,"Exile had a 1978 hit single ""Kiss You All Over"" which reached number one on the Billboard Hot 100 chart.","['exiles', 'voluntary exile', 'forced exile', 'banish', 'self exile', 'exile politics and government', 'exile in greek tragedy', 'sent into exile', 'banishment', 'transported for life', 'exile', 'internal exile', 'exile and banishment']",1
+tc_515,0,"Question: Art Garfunkel trained for which profession although he didn't qualify? 
+",medicine,"Art Garfunkel, the American singer and actor, attended Columbia University to study medicine, but he did not qualify to practice medicine due to poor grades.","['master builder occupation', 'graziani corazza', 'architecht', 'clifford lawrie', 'architechts', 'architects', 'registered architect', 'hok canada inc', 'architect', 'stanford downey architects inc']",0
+tc_515,2,"Question: Art Garfunkel trained for which profession although he didn't qualify? 
+Previous LLM Response: Answer: Medicine
+Rationale: Art Garfunkel, the American singer and actor, attended Columbia University to study medicine, but he did not qualify to practice medicine due to poor grades.
+ Wrong answer! Try again. 
+Previous LLM Response: Answer: Dentistry
+Rationale: According to previous LLM response, Art Garfunkel attended Columbia University to study medicine, but didn't qualify. Since he didn't qualify for medicine, it's likely he also didn't qualify for other medical-related fields, including dentistry.
+ Wrong answer! Try again. 
+",law,"Since Art Garfunkel attended Columbia University to study medicine but didn't qualify, it's possible that he also didn't qualify for other fields related to medicine, including law.","['master builder occupation', 'graziani corazza', 'architecht', 'clifford lawrie', 'architechts', 'architects', 'registered architect', 'hok canada inc', 'architect', 'stanford downey architects inc']",0
+tc_517,2,"Question: Who was the last inmate of Spandau jail in Berlin? 
+Previous LLM Response: Answer: Albert Speer
+Rationale: Albert Speer was the last inmate of Spandau Prison in Berlin, serving a 20-year sentence for his role as Adolf Hitler's architect and Minister of Armaments during World War II. He was imprisoned from 1945 until his death in 1981.
+ Wrong answer! Try again. 
+Previous LLM Response: Answer: Rudolf Höss
+Rationale: Rudolf Höss was the last inmate of Spandau Prison in Berlin, serving a life sentence for his role as the commandant of Auschwitz concentration camp during World War II. He was imprisoned from 1947 until his execution in 1947.
+ Wrong answer! Try again. 
+",harro schulzeboysen,"Harro Schulze-Boysen was the last inmate of Spandau Prison in Berlin, serving a life sentence for his role as a member of the German resistance against the Nazi regime during World War II. He was imprisoned from 1942 until his execution in 1942.","['rudolf hesse', 'hess rudolf', 'walther richard rudolf hess', 'rudolf hess', 'rudolf w hess', 'rudolf walter richard heß', 'rudolf walter richard hess', 'rudolph heß', 'rudolf heß', 'rudolph hess']",0
+tc_517,1,"Question: Who was the last inmate of Spandau jail in Berlin? 
+Previous LLM Response: Answer: Albert Speer
+Rationale: Albert Speer was the last inmate of Spandau Prison in Berlin, serving a 20-year sentence for his role as Adolf Hitler's architect and Minister of Armaments during World War II. He was imprisoned from 1945 until his death in 1981.
+ Wrong answer! Try again. 
+",rudolf höss,"Rudolf Höss was the last inmate of Spandau Prison in Berlin, serving a life sentence for his role as the commandant of Auschwitz concentration camp during World War II. He was imprisoned from 1947 until his execution in 1947.","['rudolf hesse', 'hess rudolf', 'walther richard rudolf hess', 'rudolf hess', 'rudolf w hess', 'rudolf walter richard heß', 'rudolf walter richard hess', 'rudolph heß', 'rudolf heß', 'rudolph hess']",0
+tc_517,0,"Question: Who was the last inmate of Spandau jail in Berlin? 
+",albert speer,"Albert Speer was the last inmate of Spandau Prison in Berlin, serving a 20-year sentence for his role as Adolf Hitler's architect and Minister of Armaments during World War II. He was imprisoned from 1945 until his death in 1981.","['rudolf hesse', 'hess rudolf', 'walther richard rudolf hess', 'rudolf hess', 'rudolf w hess', 'rudolf walter richard heß', 'rudolf walter richard hess', 'rudolph heß', 'rudolf heß', 'rudolph hess']",0
+tc_564,2,"Question: What was Walter Matthau's first movie? 
+Previous LLM Response: Answer: Battleground (1949)
+Rationale: According to IMDb, Walter Matthau's first film appearance was in the 1949 war drama film ""Battleground"", where he played a small role as a soldier.
+ Wrong answer! Try again. 
+Previous LLM Response: Answer: He Ran All the Way (1951)
+Rationale: According to IMDb, Walter Matthau's first major film role was in the 1951 film ""He Ran All the Way"", where he played the role of Nick Papapopolous.
+ Wrong answer! Try again. 
+",battleground 1949,"Although the previous responses were incorrect, IMDb still lists ""Battleground"" (1949) as Walter Matthau's film debut, although it was a small uncredited role.",['kentuckian'],0
+tc_564,0,"Question: What was Walter Matthau's first movie? 
+",battleground 1949,"According to IMDb, Walter Matthau's first film appearance was in the 1949 war drama film ""Battleground"", where he played a small role as a soldier.",['kentuckian'],0
+tc_564,1,"Question: What was Walter Matthau's first movie? 
+Previous LLM Response: Answer: Battleground (1949)
+Rationale: According to IMDb, Walter Matthau's first film appearance was in the 1949 war drama film ""Battleground"", where he played a small role as a soldier.
+ Wrong answer! Try again. 
+",he ran all way 1951,"According to IMDb, Walter Matthau's first major film role was in the 1951 film ""He Ran All the Way"", where he played the role of Nick Papapopolous.",['kentuckian'],0
+tc_604,0,"Question: In Greek mythology, who were Arges, Brontes and Steropes? 
+",cyclopes,"Arges, Brontes, and Steropes were three of the Cyclopes, a group of one-eyed giants in Greek mythology. They were the sons of the Titans Uranus and Gaea, and were known for their incredible strength and skill in metalworking.","['cyclopes disambiguation', 'cyclopes']",1
+tc_657,0,"Question: Which Brit broke the land speed record in 1990 in Thrust 2? 
+",richard noble,"Richard Noble was the driver of Thrust 2, a British jet-powered car, when it broke the land speed record in 1990, reaching a speed of 633.468 mph (1,019.468 km/h).",['richard noble'],1
+tc_672,0,"Question: Brandon Lee died during the making of which movie? 
+",crow,"Brandon Lee was an American actor who died on March 31, 1993, during the filming of the movie ""The Crow"". He was accidentally shot with a prop gun that was supposed to be loaded with blanks, but had a fragment of a real bullet in it.","['crow', 'crow dead time', 'crow 2016 film']",1
+tc_678,0,"Question: Who had a 70s No 1 hit with Let's Do It Again? 
+",staple singers,"The Staple Singers had a 1970s No. 1 hit with the song ""Let's Do It Again"", which was featured on the soundtrack of the 1975 film of the same name.","['cleotha staples', 'staple singers', 'staples singers']",1
+tc_715,0,"Question: Which US No 1 single came from Diana Ross's platinum album Diana? 
+",im coming out,"Diana Ross's 1980 album ""Diana"" was a platinum-selling album, and ""I'm Coming Out"" was one of its singles that reached number one on the US Billboard Hot 100 chart.","['upside down diana ross song', 'up side down', 'upside down', 'upside down single']",0
+tc_715,1,"Question: Which US No 1 single came from Diana Ross's platinum album Diana? 
+Previous LLM Response: Answer: ""I'm Coming Out""
+Rationale: Diana Ross's 1980 album ""Diana"" was a platinum-selling album, and ""I'm Coming Out"" was one of its singles that reached number one on the US Billboard Hot 100 chart.
+ Wrong answer! Try again. 
+",upside down,"The 1980 album ""Diana"" by Diana Ross did indeed reach platinum status, and ""Upside Down"" was one of its singles that reached number one on the US Billboard Hot 100 chart.","['upside down diana ross song', 'up side down', 'upside down', 'upside down single']",1
+tc_866,0,"Question: Who was the first person after Scott to reach the South Pole overland? 
+",vivian de sola pinto,"Vivian de Sola Pinto was a British explorer who reached the South Pole overland on January 17, 1912, as part of the British Imperial Antarctic Expedition led by Edward Evans. He was the first person to reach the South Pole after Robert Falcon Scott's ill-fated expedition, which ended in tragedy.","['sir edmund', 'edmond hillary', 'sir edmund hillary', 'edmund hillary', 'sir edmund percival hillary', 'edmund hilary', 'sir ed', 'ed hillary', 'sir edmund hilary', 'edmund percival hillary']",0
+tc_866,2,"Question: Who was the first person after Scott to reach the South Pole overland? 
+Previous LLM Response: Answer: Vivian de Sola Pinto
+Rationale: Vivian de Sola Pinto was a British explorer who reached the South Pole overland on January 17, 1912, as part of the British Imperial Antarctic Expedition led by Edward Evans. He was the first person to reach the South Pole after Robert Falcon Scott's ill-fated expedition, which ended in tragedy.
+ Wrong answer! Try again. 
+Previous LLM Response: Answer: Edward Evans
+Rationale: Edward Evans, the leader of the British Imperial Antarctic Expedition, reached the South Pole overland on January 17, 1912, along with Vivian de Sola Pinto.
+ Wrong answer! Try again. 
+",edward evans,"Although Edward Evans was the leader of the British Imperial Antarctic Expedition, he did not reach the South Pole overland. Vivian de Sola Pinto and Edward Evans were part of the same expedition, but only Vivian de Sola Pinto reached the South Pole overland.","['sir edmund', 'edmond hillary', 'sir edmund hillary', 'edmund hillary', 'sir edmund percival hillary', 'edmund hilary', 'sir ed', 'ed hillary', 'sir edmund hilary', 'edmund percival hillary']",0
+tc_866,1,"Question: Who was the first person after Scott to reach the South Pole overland? 
+Previous LLM Response: Answer: Vivian de Sola Pinto
+Rationale: Vivian de Sola Pinto was a British explorer who reached the South Pole overland on January 17, 1912, as part of the British Imperial Antarctic Expedition led by Edward Evans. He was the first person to reach the South Pole after Robert Falcon Scott's ill-fated expedition, which ended in tragedy.
+ Wrong answer! Try again. 
+",edward evans,"Edward Evans, the leader of the British Imperial Antarctic Expedition, reached the South Pole overland on January 17, 1912, along with Vivian de Sola Pinto.","['sir edmund', 'edmond hillary', 'sir edmund hillary', 'edmund hillary', 'sir edmund percival hillary', 'edmund hilary', 'sir ed', 'ed hillary', 'sir edmund hilary', 'edmund percival hillary']",0
