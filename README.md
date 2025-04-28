@@ -95,4 +95,13 @@ Fine-grained, intermediate evaluation data and statistics can also be found in `
 To run offline, modify the `.sh` file to run each command with nohup. If you have downloaded checkpoints for an already trained Critic, modify the `.sh` to only run the last line (inference) while passing the path to the Critic into `--dm_path`. Make sure the tokenizer is in the same directory.
 
 ## Citation 
-If you plan to use the code, please cite our paper: TBD.
+If you find this codebase useful, please cite 
+
+```
+@inproceedings{yang2025rag,
+  title={Knowing You Don’t Know: Learning When to Continue Search in Multi-round RAG through Self-Practicing},
+  author={Yang, Diji and Zeng, Linda and Rao, Jinmeng and Zhang, Yi},
+  booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  year={2025}
+}
+```
