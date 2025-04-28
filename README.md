@@ -38,9 +38,13 @@ Multi-round RAG through Self-Practicing (SIGIR '25). It provides a framework to 
     ```
 
 ## Prepare Data
-1. Place downloaded retrieval files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/` directory.
+1. Downloaded our prebuilt corpus files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/corpus` directory for retrieval.
 
-2. Prepare the Original Datasets
+```bash
+git clone https://huggingface.co/datasets/dyang39/SIM-RAG-Corpus bm25_search/corpus
+```
+
+3. Prepare the Original Datasets
 Place the downloaded three datasets in the `data/original/` folder. Alternatively, you can download the 2wikimultihopqa dataset from the dataset GitHub and place the folder containing the JSON files in the `data/` directory. Then, run dataset preparation scripts.
 ```bash
 python /data/prepare_2wikimultihopqa.py
