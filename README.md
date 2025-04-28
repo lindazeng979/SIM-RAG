@@ -57,9 +57,9 @@ To run the SIM-RAG experiment, you'll first need to create a custom script using
    python3 create_SIM-RAG.py
    ```
 
-2. Follow the prompts to enter details for the DRR experiment.
+2. Follow the prompts to enter details for the SIM-RAG experiment.
 
-3. After you have entered all details, the script will generate a `.sh` file in the `bash_scripts` directory, which can be used to run the DRR experiment.
+3. After you have entered all details, the script will generate a `.sh` file in the `bash_scripts` directory, which can be used to run the SIM-RAG experiment.
 
 4. Change the permissions of the generated `.sh` file to make it executable:
    ```bash
