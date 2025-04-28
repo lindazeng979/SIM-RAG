@@ -4,10 +4,10 @@ from beir.retrieval.evaluation import EvaluateRetrieval
 from beir.retrieval.search.lexical import BM25Search as BM25
 
 # Load corpus and retriever settings
-with open('bm25_search/corpus.pkl', 'rb') as f:
+with open('bm25_search/corpus/corpus.pkl', 'rb') as f:
     corpus = pickle.load(f)
     #print(dict(list(corpus.items())[0:2]))
-with open('bm25_search/retriever_settings.pkl', 'rb') as f:
+with open('bm25_search/corpus/retriever_settings.pkl', 'rb') as f:
     settings = pickle.load(f)
 
 # Function to perform BM25 search on a new query

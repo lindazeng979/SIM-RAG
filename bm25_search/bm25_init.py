@@ -65,9 +65,9 @@ model = BM25(index_name=index_name, hostname=hostname, initialize=initialize, nu
 retriever = EvaluateRetrieval(model)
 
 #### Save corpus and retriever settings for later use
-with open('corpus.pkl', 'wb') as f:
+with open('corpus/corpus.pkl', 'wb') as f:
     pickle.dump(corpus, f)
-with open('retriever_settings.pkl', 'wb') as f:
+with open('corpus/retriever_settings.pkl', 'wb') as f:
     pickle.dump({
         'index_name': index_name,
         'hostname': hostname,

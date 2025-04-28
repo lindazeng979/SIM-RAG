@@ -410,15 +410,15 @@ if __name__ == "__main__":
 
     if args.wiki_corpus:
         # Load corpus and retriever settings
-        with open('bm25_search/2wiki_corpus.pkl', 'rb') as f:
+        with open('bm25_search/corpus/2wiki_corpus.pkl', 'rb') as f:
             corpus = pickle.load(f)
-        with open('bm25_search/2wiki_retriever_settings.pkl', 'rb') as f:
+        with open('bm25_search/corpus/2wiki_retriever_settings.pkl', 'rb') as f:
             settings = pickle.load(f)
     else:
         # Load corpus and retriever settings
-        with open('bm25_search/corpus.pkl', 'rb') as f:
+        with open('bm25_search/corpus/corpus.pkl', 'rb') as f:
             corpus = pickle.load(f)
-        with open('bm25_search/retriever_settings.pkl', 'rb') as f:
+        with open('bm25_search/corpus/retriever_settings.pkl', 'rb') as f:
             settings = pickle.load(f)
         
     index_name = settings['index_name']
