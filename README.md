@@ -38,9 +38,7 @@ Multi-round RAG through Self-Practicing (SIGIR '25). It provides a framework to 
     ```
 
 ## Prepare Data
-1. Place Retrieval Corpus Files
-
-Place `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/` directory.
+1. Place retrieval files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/` directory.
 
 2. Prepare the Original Datasets
 Place the three datasets in the `data/original/` folder. Alternatively, you can download the 2wikimultihopqa dataset from the dataset GitHub and place the folder containing the JSON files in the `data/` directory. Then, run dataset preparation scripts.
@@ -81,7 +79,7 @@ Once the SIM-RAG experiment is complete, you can evaluate the predictions using 
 
 2. To evaluate the predictions, run `evaluate_SIM-RAG.py` with the experiment ame:
    ```bash
-   python3 evaluate_SIM-RAG.py {name}
+   python3 evaluate_SIM-RAG.py --experiment_name {name}
    ```
 
 3. The script will output the EM and F1 score of the predictions.
