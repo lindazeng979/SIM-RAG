@@ -19,27 +19,27 @@ import torch
 import openai
     
 def calculate_zeroshot(df):
-     # Calculate zero-shot accuracy for Turn = 0
+     # Calculate zero-shot EM for Turn = 0
 
     turn_0 = df[df['Turn'] == 0]
     total_turn_0 = len(turn_0)
     
     if total_turn_0 > 0:
         correct_turn_0 = turn_0['Correct Answer'].sum()  
-        zero_shot_accuracy = correct_turn_0 / total_turn_0  * 100
+        zero_shot_EM = correct_turn_0 / total_turn_0  * 100
         f1 = get_f1_score(turn_0) * 100
-        print(f"Zero Shot EM: {zero_shot_accuracy:.3f}")
+        print(f"Zero Shot EM: {zero_shot_EM:.3f}")
         print(f"Zero Shot F1: {f1:.3f}")
 
-def get_accuracy(df):
+def get_EM(df):
     last_entries = df.groupby('ID').tail(1)
-    system_accuracy = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries)) * 100
+    em = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries)) * 100
     f1 = get_f1_score(last_entries) * 100
 
-    print(f"SIM-RAG EM: {system_accuracy:.3f}")
+    print(f"SIM-RAG EM: {em:.3f}")
     print(f"SIM-RAG F1: {f1:.3f}")
     print(f"Total Data Points: {len(last_entries)}")
-    return system_accuracy
+    return em
 
 def evaluate_model(file_path):
     # Construct the file path for the predictions file
@@ -53,7 +53,7 @@ def evaluate_model(file_path):
     df_zs = df.groupby('ID').head(1)
 
     calculate_zeroshot(df)
-    get_accuracy(df)
+    get_em(df)
 
 def main():
     # Set up argument parser
