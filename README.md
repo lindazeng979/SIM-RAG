@@ -38,14 +38,16 @@ Multi-round RAG through Self-Practicing (SIGIR '25). It provides a framework to 
     ```
 
 ## Prepare Data
-1. Downloaded our prebuilt corpus files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/corpus` directory for retrieval.
+1. Download our prebuilt corpus files `corpus.pkl`, `wiki_corpus.pkl`, `retriever_settings.pkl`, and `wiki_retriever_settings.pkl` into the `bm25_search/corpus` directory for retrieval.
 
 ```bash
 git clone https://huggingface.co/datasets/dyang39/SIM-RAG-Corpus bm25_search/corpus
 ```
 
-3. Prepare the Original Datasets
-Place the downloaded three datasets in the `data/original/` folder. Alternatively, you can download the 2wikimultihopqa dataset from the dataset GitHub and place the folder containing the JSON files in the `data/` directory. Then, run dataset preparation scripts.
+2. (Optional) Prepare the original datasets.
+
+The datasets have already been prepared and are ready to use. However, if you'd like to prepare them yourself, you can place the 2WikiMultihopQA dataset (downloaded from its [GitHub repository](https://github.com/Alab-NII/2wikimultihop)) in the `data` directory, and the scripts will automatically load HotpotQA and TriviaQA directly from Hugging Face. Once ready, run the following scripts to process the datasets:
+ 
 ```bash
 python /data/prepare_2wikimultihopqa.py
 python /data/prepare_triviaqa.py
@@ -56,9 +58,9 @@ python /data/prepare_hotpotqa.py
 
 To run the SIM-RAG experiment, you'll first need to create a custom script using `run_SIM-RAG.py`. This script will guide you through entering parameters and generating an executable `.sh` file for your experiment.
 
-1. Run `create_SIM-RAG.py`:
+1. Run `run_SIM-RAG.py`:
    ```bash
-   python3 create_SIM-RAG.py
+   python run_SIM-RAG.py
    ```
 
 2. Follow the prompts to enter details for the SIM-RAG experiment.
@@ -83,7 +85,7 @@ Once the SIM-RAG experiment is complete, you can evaluate the predictions using 
 
 2. To evaluate the predictions, run `evaluate_SIM-RAG.py` with the experiment ame:
    ```bash
-   python3 evaluate_SIM-RAG.py --experiment_name {name}
+   python evaluate_SIM-RAG.py --experiment_name {name}
    ```
 
 3. The script will output the EM and F1 score of the predictions.
