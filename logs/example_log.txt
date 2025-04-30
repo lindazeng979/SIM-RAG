@@ -22,7 +22,7 @@ Test Data Distribution:
 Critic Evaluation Metrics: {'eval_loss': 0.24296611547470093, 'eval_accuracy': 0.7673076923076924, 'eval_precision_0': 0.7858333333333334, 'eval_precision_1': 0.7514285714285714, 'eval_recall_0': 0.7304415182029435, 'eval_recall_1': 0.8036669213139801, 'eval_f1_0': 0.7571256523484544, 'eval_f1_1': 0.776670358065707, 'eval_runtime': 671.5876, 'eval_samples_per_second': 3.871, 'eval_steps_per_second': 0.968, 'epoch': 3.0}
 ========================================
 
-===== Custom Evaluation Results for Total =====
+===== Evaluation Results for Total =====
 Num Data Points: 23808
 ------------------------
 EM: 0.2783
@@ -37,7 +37,7 @@ Critic True Negative Rate: 0.8884
 --------------------------
 ===================================================
 
-===== Custom Evaluation Results for Last Datapoint =====
+===== Evaluation Results for Last Turn =====
 Num Data Points: 7405
 ------------------------
 EM: 0.2783
