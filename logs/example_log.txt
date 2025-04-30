@@ -1,12 +1,6 @@
 Original Dataset Size: 5000
 Question Type: OEQ, GPT: False, Search Query Setting: multi_ex, Top Docs: 2, Remove Repeat Docs: True 
 ====================================
-Generated Data Statistics
-20032
-Verdict
-0    13624
-1     6408
-Name: count, dtype: int64
 Generated Data Size: 20032
 Generated Data Distribution:
 0    13624
@@ -25,38 +19,36 @@ Test Data Distribution:
 1    1309
 0    1291
 ====================================
-DAI Model Evaluation Metrics: {'eval_loss': 0.24296611547470093, 'eval_accuracy': 0.7673076923076924, 'eval_precision_0': 0.7858333333333334, 'eval_precision_1': 0.7514285714285714, 'eval_recall_0': 0.7304415182029435, 'eval_recall_1': 0.8036669213139801, 'eval_f1_0': 0.7571256523484544, 'eval_f1_1': 0.776670358065707, 'eval_runtime': 671.5876, 'eval_samples_per_second': 3.871, 'eval_steps_per_second': 0.968, 'epoch': 3.0}
+Critic Evaluation Metrics: {'eval_loss': 0.24296611547470093, 'eval_accuracy': 0.7673076923076924, 'eval_precision_0': 0.7858333333333334, 'eval_precision_1': 0.7514285714285714, 'eval_recall_0': 0.7304415182029435, 'eval_recall_1': 0.8036669213139801, 'eval_f1_0': 0.7571256523484544, 'eval_f1_1': 0.776670358065707, 'eval_runtime': 671.5876, 'eval_samples_per_second': 3.871, 'eval_steps_per_second': 0.968, 'epoch': 3.0}
 ========================================
 
 ===== Custom Evaluation Results for Total =====
 Num Data Points: 23808
 ------------------------
-System Accuracy: 0.2783
+EM: 0.2783
 F1: 0.3789
-Formula Score: -0.0768
 -------------------------
-Gate Accuracy: 0.8263
-Gate Precision: 0.4279
-Gate Recall: 0.4736
-Gate F1 Score: 0.4496
-Gate False Positive Rate: 0.1116
-Gate True Negative Rate: 0.8884
+Critic Accuracy: 0.8263
+Critic Precision: 0.4279
+Critic Recall: 0.4736
+Critic F1 Score: 0.4496
+Critic False Positive Rate: 0.1116
+Critic True Negative Rate: 0.8884
 --------------------------
 ===================================================
 
 ===== Custom Evaluation Results for Last Datapoint =====
 Num Data Points: 7405
 ------------------------
-System Accuracy: 0.2783
+EM: 0.2783
 F1: 0.3789
-Formula Score: -0.0768
 -------------------------
-Gate Accuracy: 0.6448
-Gate Precision: 0.4279
-Gate Recall: 0.8195
-Gate F1 Score: 0.5623
-Gate False Positive Rate: 0.4225
-Gate True Negative Rate: 0.5775
+Critic Accuracy: 0.6448
+Critic Precision: 0.4279
+Critic Recall: 0.8195
+Critic F1 Score: 0.5623
+Critic False Positive Rate: 0.4225
+Critic True Negative Rate: 0.5775
 --------------------------
 =======================Evaluation Per Turn============================
 Original Distribution:
@@ -93,20 +85,9 @@ Turn
 2               3569   531
 3               3226   365
 4               3101   381
-Zero Shot Accuracy:0.2070
-Zero Shot F1:0.2905
+Zero Shot EM: 0.2070
+Zero Shot F1: 0.2905
 Number of eval points: 7405
-
-Correct Answer value counts:
-Correct Answer
- 0    5230
--1    1139
- 1    1036
-Name: count, dtype: int64
-
-Total formula score: -103
-Formula percentage (average): -0.0139
-Zero Shot Formula:-0.0139
 ===================================================
 
 Overall Redundancy:
