@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from utils.text_processing import *
 from collections import Counter
 
-# ===================  Accuracy Functions =================== 
+# ===================  EM Functions =================== 
 
 # Function to normalize text: Lowercase, remove articles, punctuation, and extra spaces
 def normalize_answer(s):
@@ -106,81 +106,81 @@ def per_turn_generation(df):
     # Group by 'ID' and get the size of each group
     group_sizes = grouped.size()
 
-    # Group by 'Turn' and count the occurrences of each 'Gate Output' value
+    # Group by 'Turn' and count the occurrences of each 'Critic Output' value
     turn_counts = df.groupby('Turn')['Verdict'].value_counts().unstack(fill_value=0)
 
     # Print the results
     print("Verdict Distribution per Turn")
     print(turn_counts)
 
-    # Calculate zero-shot accuracy for Turn = 0
+    # Calculate zero-shot EM for Turn = 0
     turn_0 = df[df['Turn'] == 0]
     total_turn_0 = len(turn_0)
     
     if total_turn_0 > 0:
-        correct_turn_0 = turn_0['Verdict'].sum()  # Count of 1s in 'Gate Output'
-        zero_shot_accuracy = correct_turn_0 / total_turn_0  # Calculate accuracy
+        correct_turn_0 = turn_0['Verdict'].sum()  # Count of 1s in 'Critic Output'
+        zero_shot_EM = correct_turn_0 / total_turn_0  # Calculate EM
         zero_shot_f1 =get_f1_score(turn_0)
-        print(f"Zero Shot Accuracy (EM): {zero_shot_accuracy:.5f}%")
+        print(f"Zero Shot EM: {zero_shot_EM:.5f}%")
         print(f"Zero Shot F1:{zero_shot_f1:.5f}")
     else:
-        print("No data to calculate Zero Shot Accuracy.")
-    return turn_counts,zero_shot_accuracy,zero_shot_f1
+        print("No data to calculate Zero Shot EM.")
+    return turn_counts,zero_shot_EM,zero_shot_f1
 
-#Get accuracy from generated data
-def get_accuracy_generation(df):
+#Get EM from generated data
+def get_EM_generation(df):
     last_entries = df.groupby('ID').tail(1)
-    system_accuracy = accuracy_score(last_entries['Verdict'], [1] * len(last_entries))
+    system_EM = accuracy_score(last_entries['Verdict'], [1] * len(last_entries))
     
-    print(f"System Accuracy (EM):{system_accuracy:.4f}")
+    print(f"EM:{system_EM:.4f}")
     print(f"F1:{get_f1_score(last_entries):.4f}")
-    return system_accuracy
+    return system_EM
 
 # =================== System Functions ============================
-def get_accuracy(df):
+def get_EM(df):
     last_entries = df.groupby('ID').tail(1)
-    system_accuracy = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries))
+    system_EM = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries))
     
     print(f"Total: {len(last_entries)}")
-    print(f"System Accuracy (EM): {system_accuracy:.5f}")
+    print(f"EM: {system_EM:.5f}")
     print(f"F1: {get_f1_score(last_entries):.5f}")
-    return system_accuracy
+    return system_EM
 
-#Gives accuracy and F1 as well as gate statistics
+#Gives EM and F1 as well as critic statistics
 def custom_evaluation(df, name = ''):
     last_entries = df.groupby('ID').tail(1)
-    system_accuracy = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries))
+    system_EM = accuracy_score(last_entries['Correct Answer'], [1] * len(last_entries))
     f1 = get_f1_score(last_entries)
 
-    # Gate Accuracy, Precision, Recall, F1, False Positive Rate, True Negative Rate
-    gate_accuracy = accuracy_score(df['Correct Answer'], df['Gate Output'])
-    gate_precision = precision_score(df['Correct Answer'], df['Gate Output'])
-    gate_recall = recall_score(df['Correct Answer'], df['Gate Output'])
-    gate_f1 = f1_score(df['Correct Answer'], df['Gate Output'])
+    # Critic Accuracy, Precision, Recall, F1, False Positive Rate, True Negative Rate
+    critic_accuracy = accuracy_score(df['Correct Answer'], df['Critic Output'])
+    critic_precision = precision_score(df['Correct Answer'], df['Critic Output'])
+    critic_recall = recall_score(df['Correct Answer'], df['Critic Output'])
+    critic_f1 = f1_score(df['Correct Answer'], df['Critic Output'])
     
-    tn, fp, fn, tp = confusion_matrix(df['Correct Answer'], df['Gate Output']).ravel()
-    gate_false_positive_rate = fp / (fp + tn)
-    gate_true_negative_rate = tn / (tn + fp)
+    tn, fp, fn, tp = confusion_matrix(df['Correct Answer'], df['Critic Output']).ravel()
+    critic_false_positive_rate = fp / (fp + tn)
+    critic_true_negative_rate = tn / (tn + fp)
 
     results = {
         'Num Data Points': len(df),
         '------------------------':'',
-        'System Accuracy (EM)': system_accuracy,
+        'EM ': system_EM,
         'F1': f1,
         '-------------------------':'',
-        'Gate Accuracy': gate_accuracy,
-        'Gate Precision': gate_precision,
-        'Gate Recall': gate_recall,
-        'Gate F1 Score': gate_f1,
-        'Gate False Positive Rate': gate_false_positive_rate,
-        'Gate True Negative Rate': gate_true_negative_rate,
+        'Critic Accuracy': critic_accuracy,
+        'Critic Precision': critic_precision,
+        'Critic Recall': critic_recall,
+        'Critic F1 Score': critic_f1,
+        'Critic False Positive Rate': critic_false_positive_rate,
+        'Critic True Negative Rate': critic_true_negative_rate,
         '--------------------------':'',
     }
     
     # Print Results
     print()
     print()
-    print(f"===== Custom Evaluation Results for {name} =====")
+    print(f"===== Evaluation Results =====")
     for metric, value in results.items():
         if isinstance(value, float):
             print(f"{metric}: {value:.4f}")
@@ -282,7 +282,7 @@ def evaluate_per_turn(df):
     # Print the original distribution
     print("Original Distribution:")
     print(len(df))
-    print(df['Gate Output'].value_counts())  # Total count of Gate Verdict 0 and 1
+    print(df['Critic Output'].value_counts())  # Total count of Critic Verdict 0 and 1
     print(df['Correct Answer'].value_counts()) 
 
     # Group the data by 'ID'
@@ -295,31 +295,31 @@ def evaluate_per_turn(df):
     print("\nGroup Size Distribution:")
     print(group_sizes.value_counts().sort_index())  # Count of groups by size
 
-    # Group by 'Turn' and count the occurrences of each 'Gate Output' value
-    turn_counts = df.groupby('Turn')['Gate Output'].value_counts().unstack(fill_value=0)
+    # Group by 'Turn' and count the occurrences of each 'Critic Output' value
+    turn_counts = df.groupby('Turn')['Critic Output'].value_counts().unstack(fill_value=0)
 
     # Print the results
-    print("Gate Output counts per Turn:")
+    print("Critic Output counts per Turn:")
     print(turn_counts)
 
-    # Group by 'Turn' and count the occurrences of each 'Gate Output' value
+    # Group by 'Turn' and count the occurrences of each 'Critic Output' value
     turn_counts = df.groupby('Turn')['Correct Answer'].value_counts().unstack(fill_value=0)
 
     # Print the results
     print("Correct Answer counts per Turn:")
     print(turn_counts)
 
-    # Calculate zero-shot accuracy for Turn = 0
+    # Calculate zero-shot EM for Turn = 0
     turn_0 = df[df['Turn'] == 0]
     total_turn_0 = len(turn_0)
     
     if total_turn_0 > 0:
-        correct_turn_0 = turn_0['Correct Answer'].sum()  # Count of 1s in 'Gate Output'
-        zero_shot_accuracy = correct_turn_0 / total_turn_0  # Calculate accuracy
-        print(f"Zero Shot Accuracy (EM):{zero_shot_accuracy:.5f}")
+        correct_turn_0 = turn_0['Correct Answer'].sum()  # Count of 1s in 'Critic Output'
+        zero_shot_EM = correct_turn_0 / total_turn_0  # Calculate EM
+        print(f"Zero Shot EM:{zero_shot_EM:.5f}")
         print(f"Zero Shot F1:{get_f1_score(turn_0):.5f}")
     else:
-        print("No data to calculate Zero Shot Accuracy.")
+        print("No data to calculate Zero Shot EM.")
 
 
 
