@@ -268,12 +268,6 @@ def run_system(input_path, output_path, question_type, log_path, start=0, end=15
     print("Generation complete. Results saved to CSV.")
     print(f"Elapsed Time: {elapsed_time:.2f} seconds")
 
-    df = pd.read_csv(output_path)
-    with open(log_path, "a") as f:
-        f.write("Generated Data Statistics\n")
-        f.write(str(len(df)))
-        f.write(str(df['Verdict'].value_counts()))
-
 
 if __name__ == "__main__":
     # Set up the argument parser
