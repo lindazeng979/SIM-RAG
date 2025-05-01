@@ -5,7 +5,7 @@ Multi-round RAG through Self-Practicing (SIGIR '25). It provides a framework to 
 
 ## Prerequisites
 
-1. Download model checkpoints, the retrieval corpus, and datasets from here: TBD
+1. Download model checkpoints (optional) and the retrieval corpus (required) from here (to be added).
 
 2. Clone the repository to your local machine:
    ```bash
