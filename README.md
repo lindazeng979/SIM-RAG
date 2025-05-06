@@ -1,7 +1,7 @@
 # SIM-RAG: Self-practicing for Inner Monologue-based Retrieval Augmented Generation
 
-This is the repository for the paper: Knowing You Don’t Know: Learning When to Continue Search in
-Multi-round RAG through Self-Practicing (SIGIR '25). It provides a framework to run SIM-RAG experiments and evaluate models. Follow the steps below to set up and run your experiments.
+This is the repository for the paper: [Knowing You Don’t Know: Learning When to Continue Search in
+Multi-round RAG through Self-Practicing](https://arxiv.org/abs/2505.02811) (SIGIR '25). It provides a framework to run SIM-RAG experiments and evaluate models. Follow the steps below to set up and run your experiments.
 
 ## Prerequisites
 
