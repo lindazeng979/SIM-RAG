@@ -96,14 +96,30 @@ Fine-grained, intermediate evaluation data and statistics can also be found in `
 
 To run offline, modify the `.sh` file to run each command with nohup. If you have downloaded checkpoints for an already trained Critic, modify the `.sh` to only run the last line (inference) while passing the path to the Critic into `--dm_path`. Make sure the tokenizer is in the same directory.
 
+# Critic Checkpoints
+
+We provide a general-purpose Critic:
+
+1. [SIM-RAG-Llama3-2B](https://huggingface.co/dyang39/SIM-RAG-Llama3-2B): This Flan-T5-based Critic is fine-tuned on six datasets, including TriviaQA, HotPotQA, 2WikiMultiHopQA, PopQA, and Musique. It can be directly used for a general-purpose Critic in our Inference pipeline.
+
+
+
+To reproduce our result in the paper, we provide the following checkpoints:
+
+2. [SIM-RAG-GPT4-2B](https://huggingface.co/dyang39/SIM-RAG-GPT4-2B)
+
+3. [SIM-RAG-Llama3-2B-hotpotqa](https://huggingface.co/dyang39/SIM-RAG-Llama3-2B-hotpotqa)
+
+5. [SIM-RAG-Llama3-783M](https://huggingface.co/dyang39/SIM-RAG-783M)
+
 ## Citation 
-If you find this codebase useful, please cite 
+If you find this work useful, please kindly cite 
 
 ```
-@inproceedings{yang2025rag,
-  title={Knowing You Don’t Know: Learning When to Continue Search in Multi-round RAG through Self-Practicing},
+@article{yang2025rag,
+  title={Knowing You Don't Know: Learning When to Continue Search in Multi-round RAG through Self-Practicing},
   author={Yang, Diji and Zeng, Linda and Rao, Jinmeng and Zhang, Yi},
-  booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  journal={arXiv preprint arXiv:2505.02811},
   year={2025}
 }
 ```
